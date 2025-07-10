@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Ebook Store</h1>
+    </header>
+    <main>
+        <section id="upload-section">
+            <h2>Upload Your Ebook</h2>
+            <form id="ebook-upload-form" enctype="multipart/form-data">
+                <label for="title">Ebook Title:</label>
+                <input type="text" id="title" name="title" required><br><br>
+                
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required><br><br>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+                <label for="original-price">Original Price:</label>
+                <input type="number" id="original-price" name="original_price" step="0.01" required><br><br>
+
+                <label for="price">Discounted Price (optional):</label>
+                <input type="number" id="price" name="price" step="0.01"><br><br>
+
+                <label for="cover-page">Cover Page:</label>
+                <input type="file" id="cover-page" name="cover_page" accept="image/*" required><br><br>
+
+                <label for="pdf-file">PDF File:</label>
+                <input type="file" id="pdf-file" name="pdf_file" accept=".pdf" required><br><br>
+
+                <button type="submit">Upload Ebook</button>
+            </form>
+        </section>
+
+        <section id="ebook-list-section">
+            <h2>Available Ebooks</h2>
+            <div id="ebook-list">
+                <!-- Ebooks will be loaded here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Ebook Store</p>
+    </footer>
+    <div id="qr-code-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="qr-title">Scan to Pay</h3>
+            <div id="qr-code"></div>
+            <p id="qr-amount"></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/davidshimjs-qrcodejs/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
